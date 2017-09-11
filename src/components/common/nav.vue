@@ -1,14 +1,11 @@
 <template>
-	<div class="mainindex">
-		<div class="contents">
-			
-		</div>
+	<div>
 		<nav class="nav">
 			<ul>
-				<li>首页</li>
-				<li>买买买</li>
-				<li>我的</li>
-			</ul>			
+                <li><router-link to="/">首页</router-link></li>
+                <li><router-link to="/products">产品</router-link></li>
+                <li><router-link to="/setting">设置</router-link></li>
+            </ul>			
 		</nav>
 	</div>
 </template>
@@ -19,23 +16,7 @@
 	}
 </script>
 
-<style lang="less" >
-	/**nav*/
-.mainindex{
-
-   /*flex-flow: row wrap;flex-direction flex-wrap的简写*/
-   
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-
-}
- .contents{
-       
-        flex:  1;
-        background: greenyellow;
-        
-    }
+<style lang="less">
     .nav{
         height: 45px;
         background: blueviolet;

@@ -1,20 +1,18 @@
 <template>
 	<div class="mainindex">
 		<div class="contents">
-			
+			又突然一天
 		</div>
-		<nav class="nav">
-			<ul>
-				<router-link :to="/setting" tag="li"></router-link>
-				
-			</ul>			
-		</nav>
+		<mynav></mynav>
 	</div>
 </template>
 
 <script>
+import mynav from '../components/common/nav'
 	export default{
-
+        components:{
+            mynav
+        }
 	}
 </script>
 
