@@ -1,6 +1,8 @@
 <template>
-	<div>
-		<p>这是产品列表</p>
+	<div class="mainindex">
+		<div class="contents">
+			<p>这是产品列表</p>
+		</div>
 		<mynav></mynav>
 	</div>
 </template>
@@ -16,7 +18,5 @@ import mynav from '../components/common/nav'
 </script>
 
 <style>
-	p{
-		color: red
-	}
+
 </style>

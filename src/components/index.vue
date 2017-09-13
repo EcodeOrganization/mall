@@ -1,43 +1,76 @@
 <template>
 	<div class="mainindex">
 		<div class="contents">
-			又突然一天
+			<ibanner></ibanner>
+			<ul class="new-product">
+				<li class="new1"><i></i>早秋新品</li>
+				<li class="new2"><i></i>心机显瘦</li>
+				<li class="new3"><i></i>气质女神</li>
+				<li class="new4"><i></i>轻装复古</li>
+			</ul>
+			<prodect-list></prodect-list>
 		</div>
+		
 		<mynav></mynav>
+		
 	</div>
 </template>
 
 <script>
 import mynav from '../components/common/nav'
+import ibanner from '../components/common/banner'
+import prodectList from '../components/common/productList'
 	export default{
         components:{
-            mynav
+            mynav,
+            ibanner,
+            prodectList
         }
 	}
 </script>
 
-<style lang="less" >
-	/**nav*/
-.mainindex{
-   /*flex-flow: row wrap;flex-direction flex-wrap的简写*/
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+<style lang="less">
+	.new-product{
+		height: 110px;
+		width: 98%;
+		margin: 0 auto;
+		box-shadow: 1px -1px 4px #888888;
+		li{
+			text-align: center;
+			width: 25%;
+			float: left;
+			color: #4d00ff;
+			i{
+				width: 60px;
+				height: 60px;
+				border-radius: 30px;
+				display: block;
+				background: red;
+				margin:10px auto ;
+				background-size: 100% 100% !important;
+			}
+			&.new1{
+				i{
+					background:url(../assets/img/c1.png) no-repeat ;
+				}
+			}
+			&.new2{
+				i{
+					background:url(../assets/img/c2.png) no-repeat ;
+				}
+			}
+			&.new3{
+				i{
+					background:url(../assets/img/c3.png) no-repeat ;
+				}
+			}
+			&.new4{
+				i{
+					background:url(../assets/img/c4.png) no-repeat ;
+				}
+			}
+			
+		}
+	}
 
- .contents{    
-        flex:  1;
-        background: greenyellow;        
-    }
-    .nav{
-        height: 45px;
-        background: #c42fff;
-        li{
-        	float: left;
-        	text-align: center;
-        	width: 33.3%;
-        	line-height: 45px;
-        }
-    }
-    
-}
 </style>

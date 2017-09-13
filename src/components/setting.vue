@@ -1,6 +1,8 @@
 <template>
-	<div>
-		个人中心
+	<div class="mainindex">
+		<div class="contents">
+			<p>我的</p>
+		</div>
 		<mynav></mynav>
 	</div>
 </template>
