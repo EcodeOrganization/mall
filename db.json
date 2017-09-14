@@ -29,12 +29,6 @@
 		"srco":"./src/assets/img/b2.png",
 		"title":"第5张图",
 		"href":"https://baidu.com"
-	},
-	{
-		"id":5,
-		"srco":"./src/assets/img/b2.png",
-		"title":"第5张图",
-		"href":"https://baidu.com"
 	}
   ]
 }

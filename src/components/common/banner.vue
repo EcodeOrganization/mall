@@ -1,9 +1,8 @@
 <template>
 	<div>
 		<div class="bannerlist">
-			<ul><!--/v-for="(item,index) in bannerlists"-->
-				<li>
-					<img v-if="bannerlists.length>0" :src="bannerlists[newindex].src" />
+			<ul>
+				<img :src="bannerlists[newindex].srco" />
 				</li>
 			</ul>
 			<div class="button_info">
@@ -26,21 +25,49 @@
 			return {
 				isshow:null,
 				newindex:0,
-				bannerlists:[
-				{
-					id:null,
-					title:null,
-					href:null
-				}
-				],
+					/*bannerlists:
+						[
+							{
+								id:1,
+								srco:require('../../assets/img/b2.png'),
+								title:"第1张图",
+								href:"https://baidu.com"
+							},
+							{
+								id:2,
+								srco:require('../../assets/img/b1.png'),
+								title:"第2张图",
+								href:"https://baidu.com"
+							},
+							{
+								id:3,
+								srco:require('../../assets/img/b3.png'),
+								title:"第3张图",
+								href:"https://baidu.com"
+							},
+							{
+								id:4,
+								srco:require('../../assets/img/b4.png'),
+								title:"第4张图",
+								href:"https://baidu.com"
+							}
+						],*/
+						bannerlists:[
+						{
+							id:null,
+							srco:null,
+							title:null,
+							href:null					
+						}
+					],
 				len:0
 			}
 		},
 		props:{},
 		computed:{
 			nextindex:function(){
-				
-				if(this.newindex==this.len){//这个地方如果写this.newindex ===len 的话，静态数据会报错（我刚刚截图的错）
+				var len=this.bannerlists.length-1;
+				if(this.newindex==len){//这个地方如果写this.newindex ===len 的话，静态数据会报错（我刚刚截图的错）
 					return 0;
 				}else{
 					return this.newindex+1;
@@ -52,24 +79,30 @@
 		        this.newindex=index;
 			},
 			runInv(){
-		       setInterval(()=>{// 相当于 this.invId=setInterval(function(){
-		        this.gotoo(this.nextindex)
+				 setInterval(()=>{// 相当于 this.invId=setInterval(function(){
+				 this.gotoo(this.nextindex)
 		        },1000)
 		     },
 		},
 		mounted(){	
+			var self=this;
 			this.$http.get('api/bannerlists',{})
 			.then(function(res){
-				console.log(res.data);
-				console.log("获取到的数组长度是："+res.data.length);
-			   this.len=res.data.length-1;
-			   this.bannerlists=res.data;
+				
+			/*		
+				res.map(item => {
+	            item.srco = require('${item.srco}')
+	        })*/
+			
+				
+			 self.bannerlists=res.data;
+			 
+			 
 			})
 			.catch(function(err){
 				console.log(err);
 			});
-	
-			 this.runInv();
+			 this.runInv();		 
 		}
 	}
 </script>
@@ -111,16 +144,4 @@
 	
 </style>
 
-
-
-		<!--	this.$http.get('api/bannerlists',{})
-			.then(function(res){
-				console.log(res.data);
-				//this.bannerlists=res.data;
-			})
-			.catch(function(err){
-				console.log(err);
-			});
-			
-			 this.runInv();-->
 		
