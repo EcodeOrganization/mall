@@ -96,7 +96,7 @@
 					del{
 						color: #d8d8d8;
 						font-size: .3rem;
-						paddng-left:20px
+						padding-left:20px
 					}
 				}
 				button{

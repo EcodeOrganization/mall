@@ -3,11 +3,11 @@
 		<div class="bannerlist">
 			<ul><!--/v-for="(item,index) in bannerlists"-->
 				<li>
-					<img :src="bannerlists[newindex].src" />
+					<img v-if="bannerlists.length>0" :src="bannerlists[newindex].src" />
 				</li>
 			</ul>
 			<div class="button_info">
-				<p>{{bannerlists[0].title}}
+				<p>{{bannerlists[newindex].title}}
 					<span class="circle">
 						<i></i>
 						<i></i>
@@ -21,50 +21,26 @@
 </template>
 
 <script type="text/javascript">
-	export default{
+	export default{ 
 		data(){
 			return {
 				isshow:null,
-				newindex:3,
+				newindex:0,
 				bannerlists:[
-					{
-						id:1,
-						src:require('../../assets/img/b2.png'),
-						title:"第1张图",
-						href:"https://baidu.com"
-					},
-					{
-						id:2,
-						src:require('../../assets/img/b1.png'),
-						title:"第2张图",
-						href:"https://baidu.com"
-					},
-					{
-						id:3,
-						src:require('../../assets/img/b3.png'),
-						title:"第3张图",
-						href:"https://baidu.com"
-					},
-					{
-						id:4,
-						src:require('../../assets/img/b4.png'),
-						title:"第4张图",
-						href:"https://baidu.com"
-					}
+				{
+					id:null,
+					title:null,
+					href:null
+				}
 				],
-				
+				len:0
 			}
 		},
 		props:{},
-	/*	data(){
-		    return {
-				newindex:0
-			}
-		},*/
 		computed:{
 			nextindex:function(){
-				var len=this.bannerlists;
-				if(this.newindex ===3){
+				
+				if(this.newindex==this.len){//这个地方如果写this.newindex ===len 的话，静态数据会报错（我刚刚截图的错）
 					return 0;
 				}else{
 					return this.newindex+1;
@@ -82,6 +58,17 @@
 		     },
 		},
 		mounted(){	
+			this.$http.get('api/bannerlists',{})
+			.then(function(res){
+				console.log(res.data);
+				console.log("获取到的数组长度是："+res.data.length);
+			   this.len=res.data.length-1;
+			   this.bannerlists=res.data;
+			})
+			.catch(function(err){
+				console.log(err);
+			});
+	
 			 this.runInv();
 		}
 	}
@@ -90,7 +77,7 @@
 <style scoped lang="less">
 	.bannerlist{
 		position: relative;
-		height:100px;
+		height:120px;
 		width: 100%;
 		position: relative;
 		overflow: hidden;
@@ -123,3 +110,17 @@
 	}
 	
 </style>
+
+
+
+		<!--	this.$http.get('api/bannerlists',{})
+			.then(function(res){
+				console.log(res.data);
+				//this.bannerlists=res.data;
+			})
+			.catch(function(err){
+				console.log(err);
+			});
+			
+			 this.runInv();-->
+		

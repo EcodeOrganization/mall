@@ -9,10 +9,8 @@
 				<li class="new4"><i></i>轻装复古</li>
 			</ul>
 			<prodect-list></prodect-list>
-		</div>
-		
+		</div>		
 		<mynav></mynav>
-		
 	</div>
 </template>
 

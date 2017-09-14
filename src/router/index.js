@@ -10,6 +10,7 @@ Vue.use(Router)
 
 export default new Router({
 	linkActiveClass: 'active',
+	 mode: 'history',
   routes: [
     {
       path: '/',
@@ -35,6 +36,6 @@ export default new Router({
       path: '/ibanner',
       name: "ibanner",
       component: Ibanner
-    },
+    }
   ]
 })
