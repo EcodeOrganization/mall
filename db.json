@@ -2,38 +2,26 @@
 "bannerlists":[
 	{
 		"id":1,
-		"srco":"./src/assets/img/b2.png",
+		"srco":"static/b2.png",
 		"title":"第1张图",
 		"href":"https://baidu.com"
 	},
 	{
 		"id":2,
-		"srco":"./src/assets/img/b1.png",
+		"srco":"static/b1.png",
 		"title":"第2张图",
 		"href":"https://baidu.com"
 	},
 	{
 		"id":3,
-		"srco":"./src/assets/img/b3.png",
+		"srco":"static/b3.png",
 		"title":"第3张图",
 		"href":"https://baidu.com"
 	},
 	{
 		"id":4,
-		"srco":"./src/assets/img/b4.png",
+		"srco":"static/b4.png",
 		"title":"第4张图",
-		"href":"https://baidu.com"
-	},
-	{
-		"id":5,
-		"srco":"./src/assets/img/b2.png",
-		"title":"第5张图",
-		"href":"https://baidu.com"
-	},
-	{
-		"id":5,
-		"srco":"./src/assets/img/b2.png",
-		"title":"第5张图",
 		"href":"https://baidu.com"
 	}
   ]

@@ -8,7 +8,7 @@
 					<div class="detals">
 						<p>风衣</p>
 						<p>秋季蝙蝠袖连帽针织短外套</p>
-						<p class="price">￥:100<del>￥145</del></p>
+						<p class="price">￥100<del>￥145</del></p>
 						<p><button>立即购买</button></p>
 					</div>
 				</li>

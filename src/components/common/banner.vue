@@ -1,9 +1,9 @@
 <template>
 	<div>
+		<!--<img src="../../assets/img/b1.png" alt="">--><!-- 第二种方法 -->
 		<div class="bannerlist">
-			<ul><!--/v-for="(item,index) in bannerlists"-->
-				<li>
-					<img v-if="bannerlists.length>0" :src="bannerlists[newindex].src" />
+			<ul>
+				<img :src="bannerlists[newindex].srco"/><!-- 第一种方法 -->
 				</li>
 			</ul>
 			<div class="button_info">
@@ -21,55 +21,79 @@
 </template>
 
 <script type="text/javascript">
-	export default{ 
-		data(){
+	export default { 
+		data () {
 			return {
-				isshow:null,
-				newindex:0,
-				bannerlists:[
-				{
-					id:null,
-					title:null,
-					href:null
-				}
+				isshow: null,
+				newindex: 0,
+				// bannerlists: [
+				// 	{
+				// 		id: 1,
+				// 		srco: require('../../assets/img/b2.png'),
+				// 		title: "第1张图",
+				// 		href: "https://baidu.com"
+				// 	},
+				// 	{
+				// 		id: 2,
+				// 		srco: require('../../assets/img/b1.png'),
+				// 		title: "第2张图",
+				// 		href: "https://baidu.com"
+				// 	},
+				// 	{
+				// 		id: 3,
+				// 		srco: require('../../assets/img/b3.png'),
+				// 		title: "第3张图",
+				// 		href: "https://baidu.com"
+				// 	},
+				// 	{
+				// 		id: 4,
+				// 		srco: require('../../assets/img/b4.png'),
+				// 		title: "第4张图",
+				// 		href: "https://baidu.com"
+				// 	}
+				// ],
+				bannerlists: [
+					{
+						id: null,
+						srco: null,
+						title: null,
+						href: null					
+					}
 				],
-				len:0
+				len: 0
 			}
 		},
-		props:{},
-		computed:{
-			nextindex:function(){
-				
-				if(this.newindex==this.len){//这个地方如果写this.newindex ===len 的话，静态数据会报错（我刚刚截图的错）
+		props: {},
+		computed: {
+			nextindex () {
+				var len = this.bannerlists.length-1
+				if (this.newindex == len) { // 这个地方如果写this.newindex ===len 的话，静态数据会报错（我刚刚截图的错）
 					return 0;
-				}else{
-					return this.newindex+1;
+				} else {
+					return this.newindex+1
 				}
 			}
 		},
-		methods:{
-			gotoo:function(index){   
-		        this.newindex=index;
+		methods: {
+			gotoo (index) {   
+		        this.newindex = index
 			},
-			runInv(){
-		       setInterval(()=>{// 相当于 this.invId=setInterval(function(){
-		        this.gotoo(this.nextindex)
+			runInv () {
+			 	setInterval(() => { // 相当于 this.invId=setInterval(function(){
+			 		this.gotoo(this.nextindex)
 		        },1000)
 		     },
 		},
-		mounted(){	
-			this.$http.get('api/bannerlists',{})
-			.then(function(res){
-				console.log(res.data);
-				console.log("获取到的数组长度是："+res.data.length);
-			   this.len=res.data.length-1;
-			   this.bannerlists=res.data;
+		mounted () {	
+			this.$http.get('api/bannerlists').then((res) => {
+				// res.map(item => {
+				//           item.srco = require('${item.srco}')
+				//       })
+		 		this.bannerlists = res.data;
+			}).catch((err) => {
+				console.log(err)
 			})
-			.catch(function(err){
-				console.log(err);
-			});
-	
-			 this.runInv();
+	 		this.runInv()	 
 		}
 	}
 </script>
@@ -108,19 +132,6 @@
 			}		
 		}
 	}
-	
 </style>
 
-
-
-		<!--	this.$http.get('api/bannerlists',{})
-			.then(function(res){
-				console.log(res.data);
-				//this.bannerlists=res.data;
-			})
-			.catch(function(err){
-				console.log(err);
-			});
-			
-			 this.runInv();-->
 		
