@@ -3,49 +3,22 @@
 		<div class="productlist">
 			<p class="title">精品推荐</p>
 			<ul class="list">
-				<li>
+				<li v-for="(item,index) in productLists">
 					<a href="/details">
-					<img src="../../assets/img/c1.png" />
+					<img :src="item.ico"/>
 					<div class="detals">
-						<p>风衣</p>
-						<p>秋季蝙蝠袖连帽针织短外套</p>
-						<p class="price">￥100<del>￥145</del></p>
+						<p>{{item.title }}</p>
+						<p>{{item.details}}</p>
+						<p class="price">￥{{item.price}}<del>￥{{item.originalCost}}</del></p>
 						<p><button>立即购买</button></p>
 					</div>
 					</a>
 				</li>
-				<li>
-					<img src="../../assets/img/c4.png" />
-					<div class="detals">
-						<p class="titt">风衣</p>
-						<p>秋季蝙蝠袖连帽针织短外套</p>
-						<p class="price">￥55 <del>￥78</del></p>
-						<p><button>立即购买</button></p>
-					</div>
-				</li>
-				<li>
-					<img src="../../assets/img/c2.png" />
-					<div class="detals">
-						<p class="titt">风衣</p>
-						<p>秋季蝙蝠袖连帽针织短外套</p>
-						<p class="price">￥55 <del>￥78</del></p>
-						<p><button>立即购买</button></p>
-					</div>
-				</li>
-				<li>
-					<img src="../../assets/img/c3.png" />
-					<div class="detals">
-						<p class="titt">风衣</p>
-						<p>秋季蝙蝠袖连帽针织短外套</p>
-						<p class="price">￥55 <del>￥78</del></p>
-						<p><button>立即购买</button></p>
-					</div>
-				</li>
+				
 			</ul>
 		</div>
 	</div>
 </template>
-
 <script>
 	export default{
 		data(){
@@ -54,10 +27,24 @@
 			}
 		},
 		computed:{
-			
+			productLists:{
+				get(){
+					return this.$store.state.productList
+				},
+				set(){}
+			}
 		},
 		methods:{
 			
+		},
+		mounted () {
+			this.$http.get("api/productList").then((res) => {
+				console.log(res.data)
+				this.$store.dispatch("fetchProductList",res.data)
+			}).catch((err)=>{
+				console.log(err)
+			})				
+			console.log(this.productLists)
 		}
 		
 		
@@ -88,6 +75,9 @@
 				display:flex;/*设为伸缩容器*/  
   			    flex-flow:row;
   			    margin-top: 10px;
+  			    a{
+  			    	display: -webkit-box;
+  			    }
 	  			p{
 	  			   line-height: 25px;
 	  			}

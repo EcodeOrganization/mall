@@ -23,6 +23,60 @@
 		"srco":"static/b4.png",
 		"title":"第4张图",
 		"href":"https://baidu.com"
+	},
+	{
+		"id":2,
+		"srco":"static/b1.png",
+		"title":"第2张图",
+		"href":"https://baidu.com"
+	},
+	{
+		"id":3,
+		"srco":"static/b3.png",
+		"title":"第3张图",
+		"href":"https://baidu.com"
+	},
+	{
+		"id":4,
+		"srco":"static/b4.png",
+		"title":"第4张图",
+		"href":"https://baidu.com"
 	}
+	
+  ],
+  "productList":[
+  	{
+		"id":1,
+		"ico":"static/c1.png",
+		"title":"时尚风衣",
+		"price":100,
+		"originalCost":145,
+		"details":"送腰带~夏新款韩版宽松显瘦纯色百搭时尚气质高腰九分休闲裤女潮"		
+	},
+	{
+		"id":2,
+		"ico":"static/c2.png",
+		"title":"时尚风衣",
+		"price":100,
+		"originalCost":145,
+		"details":"送腰带~夏新款韩版宽松显瘦纯色百搭时尚气质高腰九分休闲裤女潮"		
+	},
+	{
+		"id":3,
+		"ico":"static/c3.png",
+		"title":"时尚风衣",
+		"price":100,
+		"originalCost":145,
+		"details":"送腰带~夏新款韩版宽松显瘦纯色百搭时尚气质高腰九分休闲裤女潮"		
+	},
+	{
+		"id":4,
+		"ico":"static/c4.png",
+		"title":"时尚风衣",
+		"price":100,
+		"originalCost":145,
+		"details":"送腰带~夏新款韩版宽松显瘦纯色百搭时尚气质高腰九分休闲裤女潮"		
+	}		
+		
   ]
 }

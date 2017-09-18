@@ -1,0 +1,110 @@
+{
+"bannerlists":[
+	{
+		"id":1,
+		"srco":"static/b2.png",
+		"title":"第1张图",
+		"href":"https://baidu.com"
+	},
+	{
+		"id":2,
+		"srco":"static/b1.png",
+		"title":"第2张图",
+		"href":"https://baidu.com"
+	},
+	{
+		"id":3,
+		"srco":"static/b3.png",
+		"title":"第3张图",
+		"href":"https://baidu.com"
+	},
+	{
+		"id":4,
+		"srco":"static/b4.png",
+		"title":"第4张图",
+		"href":"https://baidu.com"
+	}
+  ],
+  "productList":[
+  	{
+		"id":1,
+		"ico":"static/c1.png",
+		"title":"时尚风衣",
+		"price":100,
+		"originalCost":145,
+		"details":{
+			"tet":"送腰带~夏新款韩版宽松显瘦纯色百搭时尚气质高腰九分休闲裤女潮",
+			"img":	["static/d1.png","static/d2.png","static/d3.png"]
+		},
+		"assess":[
+			{
+				"id":1,
+				"userid":1,
+				"userpic":"static/f1.png",
+				"nikename":"单色凌",
+				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
+				"start":5,
+				"date":"2017.09.18"				
+			},
+			{
+			    "id":2,
+				"userid":2,
+				"userpic":"static/f1.png",
+				"nikename":"单色凌",
+				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
+				"start":5,
+				"date":"2017.09.18"				
+			},
+			{
+			    "id":3,
+				"userid":3,
+				"userpic":"static/f1.png",
+				"nikename":"单色凌",
+				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
+				"start":5,
+				"date":"2017.09.18"				
+			}
+		]			
+	},
+	{
+		"id":2,
+		"ico":"static/c1.png",
+		"title":"时尚风衣",
+		"price":100,
+		"originalCost":145,
+		"details":{
+			"tet":"送腰带~夏新款韩版宽松显瘦纯色百搭时尚气质高腰九分休闲裤女潮",
+			"img":	["static/d1.png","static/d2.png","static/d3.png"]
+		},
+		"assess":[
+			{
+				"id":1,
+				"userid":1,
+				"userpic":"static/f1.png",
+				"nikename":"单色凌",
+				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
+				"start":5,
+				"date":"2017.09.18"				
+			},
+			{
+			    "id":2,
+				"userid":2,
+				"userpic":"static/f1.png",
+				"nikename":"单色凌",
+				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
+				"start":5,
+				"date":"2017.09.18"				
+			},
+			{
+			    "id":3,
+				"userid":3,
+				"userpic":"static/f1.png",
+				"nikename":"单色凌",
+				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
+				"start":5,
+				"date":"2017.09.18"				
+			}
+		]			
+	}	
+  ]
+}
