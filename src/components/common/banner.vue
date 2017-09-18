@@ -58,7 +58,11 @@
 		     },
 		},
 		mounted () {	
-			this.$store.dispatch('fetchBannerList');
+			this.$http.get('api/bannerlists').then((res) => {
+				this.$store.dispatch('fetchBannerList', res.data)
+			}).catch((err) => {
+				console.log(err)
+			})
 	 		this.runInv()	 
 		}
 	}

@@ -33,20 +33,11 @@ const store = new  Vuex.Store({
 		}
 	},
 	actions: {
-		fetchBannerList (store) {
-			axios.get('api/bannerlists').then((res) => {
-		 		store.commit('setBannerList', res.data)
-			}).catch((err) => {
-				console.log(err)
-			})
+		fetchBannerList (store, data) {
+			store.commit('setBannerList', data)
 		},
 		fetchProductList(store){
-			axios.get('api/productList').
-			then((res)=>{
-				store.commit('setProductList',res.data);
-			}).catch((err)=>{
-				console.log(err);
-			})
+			store.commit('setProductList', data)
 		}
 	}
 })
