@@ -26,40 +26,6 @@
 			return {
 				isshow: null,
 				newindex: 0,
-				// bannerlists: [
-				// 	{
-				// 		id: 1,
-				// 		srco: require('../../assets/img/b2.png'),
-				// 		title: "第1张图",
-				// 		href: "https://baidu.com"
-				// 	},
-				// 	{
-				// 		id: 2,
-				// 		srco: require('../../assets/img/b1.png'),
-				// 		title: "第2张图",
-				// 		href: "https://baidu.com"
-				// 	},
-				// 	{
-				// 		id: 3,
-				// 		srco: require('../../assets/img/b3.png'),
-				// 		title: "第3张图",
-				// 		href: "https://baidu.com"
-				// 	},
-				// 	{
-				// 		id: 4,
-				// 		srco: require('../../assets/img/b4.png'),
-				// 		title: "第4张图",
-				// 		href: "https://baidu.com"
-				// 	}
-				// ],
-				bannerlists: [
-					{
-						id: null,
-						srco: null,
-						title: null,
-						href: null					
-					}
-				],
 				len: 0
 			}
 		},
@@ -67,12 +33,19 @@
 		computed: {
 			nextindex () {
 				var len = this.bannerlists.length-1
-				if (this.newindex == len) { // 这个地方如果写this.newindex ===len 的话，静态数据会报错（我刚刚截图的错）
+				if (this.newindex == len) { 
 					return 0;
 				} else {
 					return this.newindex+1
 				}
+			},
+			bannerlists:{
+				get(){
+					return this.$store.state.bannerList
+				},
+				set(){}
 			}
+			
 		},
 		methods: {
 			gotoo (index) {   
@@ -85,14 +58,7 @@
 		     },
 		},
 		mounted () {	
-			this.$http.get('api/bannerlists').then((res) => {
-				// res.map(item => {
-				//           item.srco = require('${item.srco}')
-				//       })
-		 		this.bannerlists = res.data;
-			}).catch((err) => {
-				console.log(err)
-			})
+			this.$store.dispatch('fetchBannerList');
 	 		this.runInv()	 
 		}
 	}
