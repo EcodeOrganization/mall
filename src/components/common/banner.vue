@@ -3,7 +3,8 @@
 		<!--<img src="../../assets/img/b1.png" alt="">--><!-- 第二种方法 -->
 		<div class="bannerlist">
 			<ul>
-				<img :src="bannerlists[newindex].srco"/><!-- 第一种方法 -->
+				<li>
+					<img :src="bannerlists[newindex].srco" />
 				</li>
 			</ul>
 			<div class="button_info">
@@ -25,15 +26,15 @@
 		data () {
 			return {
 				isshow: null,
-				newindex: 0,
+				newindex:0,
 				len: 0
 			}
 		},
-		props: {},
-		computed: {
-			nextindex () {
-				var len = this.bannerlists.length-1
-				if (this.newindex == len) { 
+		props:{},
+		computed:{
+			nextindex:function(){
+				var len=this.bannerlists.length-1;
+				if(this.newindex==len){
 					return 0;
 				} else {
 					return this.newindex+1

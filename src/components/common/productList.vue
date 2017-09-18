@@ -4,6 +4,7 @@
 			<p class="title">精品推荐</p>
 			<ul class="list">
 				<li>
+					<a href="/details">
 					<img src="../../assets/img/c1.png" />
 					<div class="detals">
 						<p>风衣</p>
@@ -11,6 +12,7 @@
 						<p class="price">￥100<del>￥145</del></p>
 						<p><button>立即购买</button></p>
 					</div>
+					</a>
 				</li>
 				<li>
 					<img src="../../assets/img/c4.png" />
