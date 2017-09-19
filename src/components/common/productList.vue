@@ -7,10 +7,10 @@
 					<a href="/details">
 					<img :src="item.ico"/>
 					<div class="detals">
-						<p>{{item.title }}</p>
-						<p>{{item.details}}</p>
+						<p class="titt">{{item.title }}</p>
+						<p class="explain">{{item.details}}</p>
 						<p class="price">￥{{item.price}}<del>￥{{item.originalCost}}</del></p>
-						<p><button>立即购买</button></p>
+						<p class="button"><button>立即购买</button></p>
 					</div>
 					</a>
 				</li>
@@ -39,16 +39,11 @@
 		},
 		mounted () {
 			this.$http.get("api/productList").then((res) => {
-				console.log(res.data)
 				this.$store.dispatch("fetchProductList",res.data)
 			}).catch((err)=>{
 				console.log(err)
 			})				
-			console.log(this.productLists)
-		}
-		
-		
-		
+		}	
 	}
 </script>
 
@@ -72,11 +67,12 @@
 		}
 		.list{
 			li{
-				display:flex;/*设为伸缩容器*/  
-  			    flex-flow:row;
+				
   			    margin-top: 10px;
   			    a{
   			    	display: -webkit-box;
+  			    	display:flex;/*设为伸缩容器*/  
+  			   		 flex-flow:row;
   			    }
 	  			p{
 	  			   line-height: 25px;
@@ -87,9 +83,13 @@
 				}
 				.detals{
 					flex:1;
-					display: inline-block;
 					padding: 5px 10px;	
 					border: 1px solid rgba(230, 230, 230, 0.8);
+				}
+				.explain{
+					line-height: 15px;
+					color: #b3b3b3;
+					font-size: 12px;
 				}
 				.titt{
 					font-size: 14px;
@@ -104,6 +104,7 @@
 						padding-left:20px
 					}
 				}
+				
 				button{
 					background: #fff;
 				    border: 1px solid #4d00ff;

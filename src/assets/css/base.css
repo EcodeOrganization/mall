@@ -92,6 +92,7 @@ i,em,b{font-style:normal;}/*  *  */
 .tr{text-align: right;}
 
 /*clearfix*/
+.clearfix{ clear:both;}
 .clearfix:after,.clearfix:before{content:""; display:table;}
 .clearfix:after{ clear:both;}
 .clearfix:after{zoom:1;}
