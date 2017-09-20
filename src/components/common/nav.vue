@@ -19,6 +19,7 @@
 <style lang="less">
 	.active{
 		color: royalblue !important;
+		font-weight: bold;
 	}
     .nav{
         height: 50px;
@@ -30,7 +31,7 @@
         	
         	a{
         		top: 20px;
-        		color: #4d00ff;
+        		color: #82779c;
         	}
         	i{
         		display: block;

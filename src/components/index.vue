@@ -1,5 +1,4 @@
 <template>
-	<div class="mainindex">
 		<div class="contents">
 			<ibanner></ibanner>
 			<ul class="new-product">
@@ -10,19 +9,18 @@
 			</ul>
 			<prodect-list></prodect-list>
 		</div>		
-		<mynav></mynav>
-	</div>
 </template>
 
 <script>
-import mynav from '../components/common/nav'
 import ibanner from '../components/common/banner'
 import prodectList from '../components/common/productList'
 	export default{
         components:{
-            mynav,
             ibanner,
             prodectList
+        },
+        mouneted(){
+        	console.log(this.$route);
         }
 	}
 </script>

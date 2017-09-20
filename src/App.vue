@@ -1,14 +1,36 @@
 <template>
-  <div id="app">
+  <div id="app" class="mainindex">
     <router-view></router-view>
+    <mynav v-show="isShowo"></mynav>
   </div>
 </template>
 
 <script>
+import mynav from './components/common/nav'
 export default {
-  name: 'app'
+  name: 'app',
+  components:{
+		mynav
+  },
+  data(){
+  	return{
+  		
+  	}
+  },
+  computed: {
+  	isShowo () {
+  		if (this.$route.path == '/index' || this.$route.path == '/products' || this.$route.path == '/products' || this.route.path == '/'){
+  			return true
+
+
+  		}else{
+  			return false;
+  		}
+  	}
+  }
 }
 </script>
+
 
 <style lang="less">
 	#app{
