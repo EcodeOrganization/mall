@@ -77,5 +77,44 @@
 		"originalCost":145,
 		"details":"送纯色百搭时尚气质高腰九分休闲裤女潮"		
 	}				
-  ]
+  ],
+  "getdetails":[
+  	{
+		"id":1,
+		"title":"时尚风衣",
+		"img":["static/d1.png","static/d2.png","static/d3.png","static/d4.png"],
+		"price":100,
+		"salesvolume":8888,
+		"address":"上海",
+		"assess":[
+			{
+				"id":1,
+				"userid":1,
+				"userpic":"static/f1.png",
+				"nikename":"单色凌",
+				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
+				"start":5,
+				"date":"2017.09.18"				
+			},
+			{
+			    "id":2,
+				"userid":2,
+				"userpic":"static/f1.png",
+				"nikename":"jay",
+				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
+				"start":5,
+				"date":"2017.09.18"				
+			},
+			{
+			    "id":3,
+				"userid":3,
+				"userpic":"static/f1.png",
+				"nikename":"林俊杰",
+				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
+				"start":5,
+				"date":"2017.09.18"				
+			}			
+  		]
+	}
+	]
 }

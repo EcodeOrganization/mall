@@ -1,12 +1,21 @@
 <template>
 	<div class="header">
-		<i></i>
+		<i @click="back()"></i>
 		<span class="h1">产品详情</span>			
 	</div>
 </template>
 
 <script>
-	
+	export default{
+		methods:{
+			back(){
+				this.$router.go(-1);
+			}
+		},
+		mouneted(){
+			
+		}
+	}
 </script>
 
 <style lang="less">
@@ -17,8 +26,8 @@
 		i{
 			float: left;
 			display: inline-block;
-			width: 25px;
-			height: 35px;
+			width: 32px;
+			height: 32px;
 			margin: 5px 10px;
 			background:url(../../assets/img/icon_back.png) no-repeat left top;
 		}
@@ -31,6 +40,7 @@
 		    text-align: center;
 		    font-size: 16px;
     		font-weight: bold;
+    		color:#929292;
 		    
 		}
 	}

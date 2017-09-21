@@ -5,11 +5,14 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import store from './store'
+import $ from 'jquery'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios //通过修改原型链，来更方便的使用
 
 import "./assets/css/base.css"
+
+
 
 /* eslint-disable no-new */
 new Vue({

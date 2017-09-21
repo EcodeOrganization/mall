@@ -14,7 +14,6 @@ export default new Router({
 	 routes: [
 	    {
 	      path: '/',
-	      name: "index",
 	      component: Index
 	    },
 	     {
@@ -33,7 +32,7 @@ export default new Router({
 	      component: Setting
 	    },
 	    {
-	      path: '/details',
+	      path: '/details/:id',
 	      name: "details",
 	      component: details
 	    },

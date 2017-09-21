@@ -15,8 +15,8 @@
 				</div>	
 			</div>
 			<div class="priceinfo">
-				<p class="pri">￥{{detailslist.price}}</p>
-				<p class="others"><span>月销量：{{detailslist.salesvolume}}</span><span>产地：{{detailslist.address}}</span></p>
+				<p class="pri">￥79</p>
+				<p class="others"><span>月销量：1122</span><span>产地：上海</span></p>
 			</div>
 			<div class="appraise">
 				<p class="count">商品评价(66)</p>
@@ -57,8 +57,23 @@
 		</div>
 	</div>
 </template>
-
-<script>	
+<!--//https://www.ctolib.com/qingyangmoke-vue-plugin-touch.html-->
+<!--<script type="text/javascript" src="../../assets/js/touchwipe.js" ></script>-->
+<script>
+	
+	/*$(function(){
+		//console.log("添加成功");	
+		 	$(".qqqq").touchwipe({
+	 			wipeLeft: function() {
+	 				  console.log("向左滑动");
+	 			}, //左侧滑动事件
+	 			wipeRight: function() { 
+	 			 console.log("向右滑动");
+	 			}, //右侧滑动事件
+ 	
+ 			});
+			
+	});*/	
 	import header from "./header"	
 	import star from "./star"	
 	export default {
@@ -81,17 +96,18 @@
 				}
 			}
 		},
-		created(){
-			this.$http.get('/api/getdetails',{params: {id: this.id}}
-			).then((res) => {
-			    //console.log(res.data);
-				this.$store.dispatch('getProListById', res.data[0])			
-			}).catch((err) => {
-					console.log(err)
-			});
-		},
 		mounted(){
-//			console.log(this.detailslist);
+			//console.log(this.$store);
+			console.log(this.detailslist);
+		},
+		created(){
+			this.$http.get('/api/getdetails',{id: this.id}
+			).then(function (response) {
+					this.$store.dispatch('setGetdetails', response.data)		
+					
+			}).catch(function (error) {
+				
+			});
 		}
 	}
 </script>

@@ -19,12 +19,10 @@ export default {
   },
   computed: {
   	isShowo () {
-  		if (this.$route.path == '/index' || this.$route.path == '/products' || this.$route.path == '/products' || this.route.path == '/'){
+  		if (this.$route.path == '/' || this.$route.path == '/index' || this.$route.path == '/products' || this.$route.path == '/setting') {
   			return true
-
-
-  		}else{
-  			return false;
+  		} else {
+  			return false
   		}
   	}
   }

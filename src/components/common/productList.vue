@@ -3,18 +3,19 @@
 		<div class="productlist">
 			<p class="title">精品推荐</p>
 			<ul class="list">
-				<li v-for="(item,index) in productLists">
-					<a href="/details">
-					<img :src="item.ico"/>
-					<div class="detals">
-						<p class="titt">{{item.title }}</p>
-						<p class="explain">{{item.details}}</p>
-						<p class="price">￥{{item.price}}<del>￥{{item.originalCost}}</del></p>
-						<p class="button"><button>立即购买</button></p>
-					</div>
+				<li v-for="(item,index) in productLists" @click="jump(item.id)">
+					<!--<router-link to="/details/10">-->
+					<a>
+						<img :src="item.ico"/>
+						<div class="detals">
+							<p class="titt">{{item.title }}</p>
+							<p class="explain">{{item.details}}</p>
+							<p class="price">￥{{item.price}}<del>￥{{item.originalCost}}</del></p>
+							<p class="button"><button>立即购买</button></p>
+						</div>
 					</a>
-				</li>
-				
+					<!--</router-link>-->
+				</li>				
 			</ul>
 		</div>
 	</div>
@@ -35,7 +36,9 @@
 			}
 		},
 		methods:{
-			
+			jump (value) {
+				this.$router.push('/details/' +  value)
+			}
 		},
 		mounted () {
 			this.$http.get("api/productList").then((res) => {

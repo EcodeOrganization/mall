@@ -21,23 +21,27 @@ const store = new  Vuex.Store({
 				price: null,
 				originalCost: null,
 				details: null
-				/*details: {
-					tet: null,
-					img: []
-				},
-				assess: [
-					{
-						id: null,
-						userid: null,
-						userpic: null,
-						nikename: null,
-						content: null,
-						start: null,
-						date: null		
-					}
-				]*/	
 			}
-	    ]
+	    ],
+	    getdetails: {
+    		id:null,
+			title:null,
+			img:[],
+			price: null,
+			salesvolume:null,
+			address:null,
+			assess:[
+				{
+					id:null,
+					userid:null,
+					userpic:null,
+					nikename:null,
+					content:null,
+					start:null,
+					date:null	
+		    	}
+    		]
+		},
 	},
 	getters: {},
 	mutations: {
@@ -46,6 +50,9 @@ const store = new  Vuex.Store({
 		},
 		setProductList:(state,data)=>{
 			state.productList = data
+		},
+		setGetdetails:(state,data)=>{
+			state.getdetails = data
 		}
 	},
 	actions: {
@@ -53,8 +60,13 @@ const store = new  Vuex.Store({
 		fetchBannerList (store, data) {
 			store.commit('setBannerList', data)
 		},
+		//获取首页产品列表
 		fetchProductList (store, data) {
 			store.commit('setProductList', data)
+		},
+		//根据id获取详情信息
+		getProListById (store, data) {
+			store.commit('setGetdetails',data)
 		}
 	}
 })
