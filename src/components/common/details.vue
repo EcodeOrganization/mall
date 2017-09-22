@@ -1,17 +1,16 @@
 <template>
 	<div class="allcontent">
-		<myheaders></myheaders>
+		<myheaders :title="detailslist.title"></myheaders>
 		<div class="details">
 			<div class="typeshow">
 				<ul>
-					<li class="qqqq"><img src="../../assets/img/d1.png"></li>
-					<li><img src="../../assets/img/d2.png"></li>
-					<li><img src="../../assets/img/d3.png"></li>
-					<li><img src="../../assets/img/d4.png"></li>
-					<li><img src="../../assets/img/d5.png"></li>
+					<li v-for="item in detailslist.img" v-touch:touchend="onTouchEnd">
+						<img :src="detailslist.img[nowindex]">	
+					</li>
+				
 				</ul>
 				<div class="length">
-					<p><span></span><span></span><span></span><span></span></p>
+					<p><span v-for="(o,i) in detailslist.img" :class="{current:(i===nowindex)}"></span></p>
 				</div>	
 			</div>
 			<div class="priceinfo">
@@ -19,42 +18,24 @@
 				<p class="others"><span>月销量：{{detailslist.salesvolume}}</span><span>产地：{{detailslist.address}}</span></p>
 			</div>
 			<div class="appraise">
-				<p class="count">商品评价(66)</p>
+				<p class="count">商品评价({{detailslist.assess.length}})</p>
 				<ul>
-					<li class="clearfix">
-						<p class="clearfix"><img class="img" src="../../assets/img/u1.png"><span class="username">小破孩</span>
-							<mystar :num=3></mystar></p>
-						<p class= "text">其他商品没有统一的货源，产品判断上就有所不同，
-							不过还是要更关注自身需求从评论里找出点端倪，
-							而不是泛泛的看评价的有多好或者有多差。
+					<li class="clearfix" v-for="(item,index) in detailslist.assess" :class="{hideBorderBottom:item.islast}">
+						<p class="clearfix">
+							<img class="img" :src="item.userpic">
+							<span class="username">{{item.nikename}}</span>
+							<mystar :num="item.start"></mystar></p>
+						<p class= "text">{{item.content}}
 						</p>
-						<p class="date"><span>2017.09.19</span></p>
+						<p class="date"><span>{{item.date}}</span></p>
 					</li>
-					
-					<li>
-						<p class="clearfix"><img class="img" src="../../assets/img/u1.png"><span class="username">小破孩</span>
-							<mystar :num=2></mystar>
-						</p>
-						<p class= "text">耶耶耶！！其他商品没有统一的货源，产品判断上就有所不同，
-							不过还是要更关注自身需求从评论里找出点端倪，
-							而不是泛泛的看评价的有多好或者有多差。
-						</p>
-						<p class="date"><span>2017.09.19</span></p>
-					</li>
-						<li>
-						<p class="clearfix"><img class="img" src="../../assets/img/u1.png"><span class="username">小破孩</span>
-							<mystar :num=1></mystar>
-						</p>
-						<p class= "text">耶耶耶！！其他商品没有统一的货源，产品判断上就有所不同，
-							不过还是要更关注自身需求从评论里找出点端倪，
-							而不是泛泛的看评价的有多好或者有多差。
-						</p>
-						<p class="date"><span>2017.09.19</span></p>
-					</li>
-					
 				</ul>
 			</div>
+			<div class="button_div">
+				<button>立即购买</button>
+			</div>
 		</div>
+	
 	</div>
 </template>
 
@@ -62,12 +43,25 @@
 	import header from "./header"	
 	import star from "./star"	
 	export default {
+		data(){
+			return {
+				nowindex:0
+			}
+		},
 		components:{
 			myheaders:header,
 			mystar:star
 		},
 		methods:{
-			
+			//点击屏幕，切换图片
+			onTouchEnd(){
+				var count=this.detailslist.img.length-1;
+				if(this.nowindex<count){
+					this.nowindex++;
+				}else{
+					this.nowindex=0
+				}
+			}			
 		},
 		computed:{
 			id(){
@@ -83,24 +77,24 @@
 		},
 		created(){
 			this.$http.get('/api/getdetails',{params: {id: this.id}}
-			).then((res) => {
-			    //console.log(res.data);
+		).then((res) => {
 				this.$store.dispatch('getProListById', res.data[0])			
 			}).catch((err) => {
 					console.log(err)
 			});
 		},
 		mounted(){
-//			console.log(this.detailslist);
+			//异步请求需要时间加载，此处模拟接口是，执行速度太快，拿不到数据，可写个定时器~~~
+			//console.log(this.detailslist);
 		}
 	}
 </script>
 
 <style lang="less">
-	.allcontent{
-		display: flex;
-		flex-direction: column;
-	}
+.allcontent{
+	display: flex;
+	flex-direction: column;
+	
 	.details{
 		flex:  1;
 	
@@ -127,6 +121,9 @@
 					margin: 0 5px;
 					background: white;
 					display: inline-block;	
+					&.current{
+						background: red;
+					}
 				}				
 			}
 		}
@@ -164,13 +161,18 @@
 		    	li{
 		    		margin:5px 0;
 		    		border-bottom: 1px solid #ececec;
-		    		height: 150px;
+		    		padding-bottom: 15px;
+		    		&.hideBorderBottom
+		    		{
+		    			border-bottom:none !important;
+		    		}
 		    		.img{
 		    			width: 50px;
 					    height: 50px;
 					    border-radius: 25px;
 					    float: left;
 		    		}
+		    		
 		    		.img1{
 		    			width: 20px;
 					    height: 20px;
@@ -199,4 +201,20 @@
 		    }
 		}
 	}
+	.button_div{
+		margin-top: 10px;
+		height: 50px;
+		button{
+	   	    background: linear-gradient(to right, #ffa100,#ff6804);
+			width: 100%;
+			height: 100%;
+		    color: floralwhite;
+		    text-align: center;
+		    display: block;
+		    line-height: 50px;
+		    font-size: 16px;
+		    
+		}
+	}
+}
 </style>

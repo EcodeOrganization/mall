@@ -1,12 +1,15 @@
 <template>
 	<div class="header">
 		<i @click="back()"></i>
-		<span class="h1">产品详情</span>			
+		<span class="h1">{{this.title}}</span>			
 	</div>
 </template>
 
 <script>
 	export default{
+		props:{
+			title:null
+		},
 		methods:{
 			back(){
 				this.$router.go(-1);

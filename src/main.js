@@ -6,6 +6,7 @@ import router from './router'
 import axios from 'axios'
 import store from './store'
 import $ from 'jquery'
+import vueTouch from "vue-plugin-touch"
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios //通过修改原型链，来更方便的使用
@@ -13,12 +14,13 @@ Vue.prototype.$http = axios //通过修改原型链，来更方便的使用
 import "./assets/css/base.css"
 
 
-
+Vue.use(vueTouch)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
+  vueTouch,
   template: '<App/>',
   components: { App }
 })

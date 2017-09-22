@@ -82,7 +82,7 @@
   	{
 		"id":1,
 		"title":"时尚风衣",
-		"img":["static/d1.png","static/d2.png","static/d3.png","static/d4.png"],
+		"img":["/static/d4.png","/static/d2.png","/static/d3.png","/static/d1.png"],
 		"price":100,
 		"salesvolume":8888,
 		"address":"上海",
@@ -90,7 +90,7 @@
 			{
 				"id":1,
 				"userid":1,
-				"userpic":"static/f1.png",
+				"userpic":"/static/u1.png",
 				"nikename":"单色凌",
 				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
 				"start":5,
@@ -99,20 +99,21 @@
 			{
 			    "id":2,
 				"userid":2,
-				"userpic":"static/f1.png",
+				"userpic":"/static/u2.png",
 				"nikename":"jay",
-				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
-				"start":5,
-				"date":"2017.09.18"				
+				"content":"窗外的麻雀，在电线杆上多嘴，你说这一句很有夏天的感觉",
+				"start":4,
+				"date":"2017.09.20"				
 			},
 			{
 			    "id":3,
 				"userid":3,
-				"userpic":"static/f1.png",
+				"userpic":"/static/u3.png",
 				"nikename":"林俊杰",
-				"content":"宝贝非常漂亮 客服态度也很好 下次还会继续来买的",
-				"start":5,
-				"date":"2017.09.18"				
+				"content":"因为在 一千年以后世界早已没有我无法深情挽着你的手浅吻着你额头",
+				"start":3,
+				"date":"2017.09.22",
+				"islast":true				
 			}			
   		]
 	}
