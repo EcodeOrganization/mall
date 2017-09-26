@@ -9,7 +9,9 @@
 						<div class="detals">
 							<p class="titt">{{item.title }}</p>
 							<p class="explain">{{item.details}}</p>
-							<p class="price">￥{{item.price}}<del>￥{{item.originalCost}}</del></p>
+							<p class="price">￥{{item.price}}<del>￥{{item.originalCost}}</del> 
+							<!--<span class="collect></span>  未收藏的样式-->
+								<span class="collect collected"></span</p>
 							<p class="button"><button>立即购买</button></p>
 						</div>
 					</a>
@@ -40,7 +42,7 @@
 			}
 		},
 		mounted () {
-			this.$http.get("/api/productList").then((res) => {
+			this.$http.get(this.resource+"/productList").then((res) => {
 				this.$store.dispatch("fetchProductList",res.data)
 			}).catch((err)=>{
 				console.log(err)
@@ -93,15 +95,31 @@
 						font-size: 12px;
 						padding-left:20px
 					}
+					.collect{
+						display: inline-block;
+						width:25px;
+						height: 25px;
+						margin-left: 10px;
+						background: url(../../assets/img/icon-collect.png) no-repeat right bottom;
+						background-size: 80% 80%;
+						&.collected{
+							background: url(../../assets/img/icon-collect1.png) no-repeat right bottom;
+							background-size: 80% 80%;
+						}
+					
+					}
+				}
+				.button{
+					button{
+						background: #fff;
+					    border: 1px solid #4d00ff;
+					    padding: 4px 10px;
+					    border-radius: 4px;
+					    color: #4d00ff;
+					}
+					
 				}
 				
-				button{
-					background: #fff;
-				    border: 1px solid #4d00ff;
-				    padding: 4px 10px;
-				    border-radius: 4px;
-				    color: #4d00ff;
-				}
 			}
 		}
 		

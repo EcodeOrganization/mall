@@ -7,7 +7,9 @@
 				<p>好好学习，天天向上</p>
 			</div>
 			<ul class="functionlist">
-				<li>我的收藏</li>
+				<router-link to="/mycollect">
+					<li>我的收藏<span></span></li>
+				</router-link>
 				<li>收货地址</li>
 				<li>服务中心</li>
 				<li>联系我们</li>
@@ -52,6 +54,16 @@
 				height: 45px;
 				border-bottom: 1px solid  #ececec;
 				padding-left: 15px;
+				span{
+					display: inline-block;
+					width: 32px;
+					height: 32px;
+					margin-top: 3px;
+					float: right;
+					background: url(../assets/img/icon-go.png) no-repeat center center;
+					background-size: 70% 70%;
+					
+				}
 			}
 	}
 </style>

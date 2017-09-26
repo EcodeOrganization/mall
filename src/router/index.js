@@ -6,6 +6,7 @@ import Setting from '../components/setting'
 import details from '../components/common/details'
 import Order from '../components/order'
 import productType from "../components/childPage/productType"
+import mycollect from "../components/childPage/mycollect"
 
 
 
@@ -39,9 +40,10 @@ export default new Router({
 	    	component:Order
 	    },
 	    {
-	      path: '/setting',
-	      name: "setting",
-	      component: Setting
+		    path: '/setting',
+		    name: "setting",
+		    component: Setting
+		   
 	    },
 	    {
 	      path: '/details/:id',
@@ -53,6 +55,10 @@ export default new Router({
 	    	name:"productType",
 	    	component:productType
 	    },
+	    { 
+			path: "/mycollect",
+			component: mycollect 
+		}
 	    
 	]
 })

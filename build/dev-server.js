@@ -63,7 +63,7 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-//使用json-server
+/*//使用json-server
 var jsonServer=require("json-server");
 const apiServer = jsonServer.create()
 const apiRouter = jsonServer.router('db.json')
@@ -73,7 +73,7 @@ apiServer.use(middlewares)
 apiServer.use("/api",apiRouter)
 apiServer.listen(3000, () => {
   console.log('JSON Server is running')
-})
+})*/
 
 
 var uri = 'http://localhost:' + port
