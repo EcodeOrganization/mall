@@ -5,7 +5,6 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import store from './store'
-import $ from 'jquery'
 import vueTouch from "vue-plugin-touch"
 
 Vue.config.productionTip = false

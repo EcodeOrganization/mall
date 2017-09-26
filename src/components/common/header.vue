@@ -8,7 +8,7 @@
 <script>
 	export default{
 		props:{
-			title:null
+			title:"请显示标题"
 		},
 		methods:{
 			back(){

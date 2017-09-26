@@ -69,7 +69,7 @@
 			},
 			detailslist:{
 				get(){
-					return this.$store.state.getdetails					
+					return this.$store.state.getdetails				
 				},
 				set(){
 				}
@@ -78,7 +78,8 @@
 		created(){
 			this.$http.get('/api/getdetails',{params: {id: this.id}}
 		).then((res) => {
-				this.$store.dispatch('getProListById', res.data[0])			
+			
+				this.$store.dispatch('getProListById', res.data)			
 			}).catch((err) => {
 					console.log(err)
 			});

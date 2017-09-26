@@ -7,6 +7,7 @@
 				<li class="new3"><i></i>气质女神</li>
 				<li class="new4"><i></i>轻装复古</li>
 			</ul>
+			<p class="jptitle">精品推荐</p>
 			<prodect-list></prodect-list>
 		</div>		
 </template>
@@ -67,6 +68,21 @@ import prodectList from '../components/common/productList'
 			}
 			
 		}
+		
 	}
+	.jptitle{
+			height: 20px;
+			line-height: 20px;
+			font-size: 10px;
+			color: #969696;
+			&:before{
+				content: "";
+				width: 5px;
+				height: 10px;
+				background:salmon;
+				display: inline-block;
+				margin:0 5px;
+			}
+		}
 
 </style>

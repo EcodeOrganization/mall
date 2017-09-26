@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<div class="productlist">
-			<p class="title">精品推荐</p>
 			<ul class="list">
 				<li v-for="(item,index) in productLists" @click="jump(item.id)">
 					<!--<router-link to="/details/10">-->
@@ -41,7 +40,7 @@
 			}
 		},
 		mounted () {
-			this.$http.get("api/productList").then((res) => {
+			this.$http.get("/api/productList").then((res) => {
 				this.$store.dispatch("fetchProductList",res.data)
 			}).catch((err)=>{
 				console.log(err)
@@ -52,25 +51,13 @@
 
 <style scoped lang="less">
 	.productlist{
-		margin:10px auto;
+		margin:5px auto;
 		width: 98%;
-		padding: 5px;
+		padding: 2px 5px;
 		box-shadow: 1px -1px 4px #888888;
-		.title{
-			font-size: 10px;
-			color: #969696;
-			&:before{
-				content: "";
-				width: 5px;
-				height: 10px;
-				background:salmon;
-				display: inline-block;
-				margin:0 5px;
-			}
-		}
+		
 		.list{
 			li{
-				
   			    margin-top: 10px;
   			    a{
   			    	display: -webkit-box;
@@ -103,7 +90,7 @@
 					font-size: 20px;
 					del{
 						color: #d8d8d8;
-						font-size: .3rem;
+						font-size: 12px;
 						padding-left:20px
 					}
 				}

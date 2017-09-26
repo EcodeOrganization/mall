@@ -2,43 +2,43 @@
 "bannerlists":[
 	{
 		"id":1,
-		"srco":"static/b3.png",
+		"srco":"/static/b3.png",
 		"title":"第1张图",
 		"href":"https://baidu.com"
 	},
 	{
 		"id":2,
-		"srco":"static/b4.png",
+		"srco":"/static/b4.png",
 		"title":"第2张图",
 		"href":"https://baidu.com"
 	},
 	{
 		"id":3,
-		"srco":"static/b2.png",
+		"srco":"/static/b2.png",
 		"title":"第3张图",
 		"href":"https://baidu.com"
 	},
 	{
 		"id":4,
-		"srco":"static/b1.png",
+		"srco":"/static/b1.png",
 		"title":"第4张图",
 		"href":"https://baidu.com"
 	},
 	{
 		"id":2,
-		"srco":"static/b1.png",
+		"srco":"/static/b1.png",
 		"title":"第2张图",
 		"href":"https://baidu.com"
 	},
 	{
 		"id":3,
-		"srco":"static/b3.png",
+		"srco":"/static/b3.png",
 		"title":"第3张图",
 		"href":"https://baidu.com"
 	},
 	{
 		"id":4,
-		"srco":"static/b4.png",
+		"srco":"/static/b4.png",
 		"title":"第4张图",
 		"href":"https://baidu.com"
 	}
@@ -47,7 +47,7 @@
   "productList":[
   	{
 		"id":1,
-		"ico":"static/c1.png",
+		"ico":"/static/c1.png",
 		"title":"时尚风衣",
 		"price":100,
 		"originalCost":145,
@@ -55,7 +55,7 @@
 	},
 	{
 		"id":2,
-		"ico":"static/c2.png",
+		"ico":"/static/c2.png",
 		"title":"时尚风衣",
 		"price":100,
 		"originalCost":145,
@@ -63,7 +63,7 @@
 	},
 	{
 		"id":3,
-		"ico":"static/c3.png",
+		"ico":"/static/c3.png",
 		"title":"时尚风衣",
 		"price":100,
 		"originalCost":145,
@@ -71,18 +71,18 @@
 	},
 	{
 		"id":4,
-		"ico":"static/c4.png",
+		"ico":"/static/c4.png",
 		"title":"时尚风衣",
 		"price":100,
 		"originalCost":145,
 		"details":"送纯色百搭时尚气质高腰九分休闲裤女潮"		
 	}				
   ],
-  "getdetails":[
+  "getdetails":
   	{
 		"id":1,
 		"title":"时尚风衣",
-		"img":["/static/d4.png","/static/d2.png","/static/d3.png","/static/d1.png"],
+		"img":["/static/d1.png","/static/d2.png","/static/d3.png","/static/d4.png"],
 		"price":100,
 		"salesvolume":8888,
 		"address":"上海",
@@ -117,5 +117,4 @@
 			}			
   		]
 	}
-	]
 }

@@ -4,6 +4,9 @@ import Index from '../components/index'
 import Products from '../components/products'
 import Setting from '../components/setting'
 import details from '../components/common/details'
+import Order from '../components/order'
+import productType from "../components/childPage/productType"
+
 
 
 Vue.use(Router)
@@ -12,9 +15,13 @@ export default new Router({
 	linkActiveClass: 'active',
 	 mode: 'history',
 	 routes: [
-	    {
+	    /*{
 	      path: '/',
 	      component: Index
+	    },*/
+	    {
+	      path: "*",
+	      redirect: "/index"
 	    },
 	     {
 	      path: '/index',
@@ -27,6 +34,11 @@ export default new Router({
 	      component: Products
 	    },
 	    {
+	    	path:'/order',
+	    	name:'order',
+	    	component:Order
+	    },
+	    {
 	      path: '/setting',
 	      name: "setting",
 	      component: Setting
@@ -36,6 +48,11 @@ export default new Router({
 	      name: "details",
 	      component: details
 	    },
-	   
-	  ]
+	    {
+	    	path:"/productType",
+	    	name:"productType",
+	    	component:productType
+	    },
+	    
+	]
 })
