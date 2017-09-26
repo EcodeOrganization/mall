@@ -7,8 +7,12 @@
 
 <script>
 	export default{
+		//props:["title"],
 		props:{
-			title:"请显示标题"
+			title:{
+				type:String,
+				default:"请显示标题"
+			}
 		},
 		methods:{
 			back(){

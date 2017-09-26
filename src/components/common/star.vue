@@ -9,7 +9,10 @@
 <script>
 	export default{
 		props:{
-			num:0
+			num:{
+				type:Number,
+				default:0
+			}
 		},
 		created(){
 			//console.log(this.num);
